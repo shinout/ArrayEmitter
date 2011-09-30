@@ -1,6 +1,6 @@
 {
   "name": "arrayemitter"
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "description": "EventEmitter emittin array-iteration events."
 , "tags": ["EventEmitter", "array", "object", "iteration", "event"]
 , "author": "SHIN Suzuki <shinout310@gmail.com>"

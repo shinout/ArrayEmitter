@@ -1,5 +1,6 @@
 { changeLogs        :
     { "0.0.1" :   "リリース"
+    , "0.0.2" :   "resume() および options.norunを追加して好きなタイミングでemitするように修正"
     }
 
 , changelog         : '変更履歴'

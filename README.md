@@ -1,4 +1,4 @@
-ArrayEmitter.js 0.0.1
+ArrayEmitter.js 0.0.2
 ==========
 [Node.js] EventEmitter emitting array-iteration events
 
@@ -6,6 +6,7 @@ Change Log
 
 ----------------
 * [0.0.1]: Release
+* [0.0.2]: add resume() and options.norun
 
 Overview
 ----------------

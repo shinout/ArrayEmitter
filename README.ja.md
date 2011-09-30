@@ -1,4 +1,4 @@
-ArrayEmitter.js 0.0.1
+ArrayEmitter.js 0.0.2
 ==========
 [Node.js] 配列,オブジェクトの順次処理のためのEventEmitter
 
@@ -6,6 +6,7 @@ ArrayEmitter.js 0.0.1
 
 ----------------
 * [0.0.1]: リリース
+* [0.0.2]: resume() および options.norunを追加して好きなタイミングでemitするように修正
 
 概要
 ----------------

@@ -1,7 +1,7 @@
 /**
  * ArrayEmitter -- EventEmitter emitting array iteration events
  * @author SHIN Suzuki
- * @version 0.0.1
+ * @version 0.0.2
  *
  */
 
@@ -84,6 +84,6 @@ ArrayEmitter.prototype.getKey = function() {
   return (this.arr instanceof Array) ? this.i : Object.keys(this.arr)[this.i];
 }
 
-ArrayEmitter.version = '0.0.1';
+ArrayEmitter.version = '0.0.2';
 
 module.exports = ArrayEmitter;

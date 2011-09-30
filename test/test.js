@@ -99,3 +99,28 @@ eobjem2.on('error', function(e) {
 eobjem2.on('end', function() {
   T.equal(ecount2, Math.floor(TOTAL/100), 'error count');
 });
+
+
+/* resume test */
+var ae = new ArrayEmitter(arr, {norun: true});
+var c = c2 = 0;
+
+ae.on('elem', function(key, value) {
+  T.equal(c, key, 'key number');
+  T.equal(Math.round(value, 8), Math.round(Math.sin(key), 8), 'value');
+  c++;
+});
+
+ae.on('data', function(value) {
+  T.equal(Math.round(value, 8), Math.round(Math.sin(c2), 8), 'value');
+  c2++;
+});
+
+ae.on('end', function() {
+  T.equal(c, TOTAL, 'with resume end');
+});
+
+ae.resume();
+
+
+
