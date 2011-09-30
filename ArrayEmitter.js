@@ -30,8 +30,8 @@ var EventEmitter = require('events').EventEmitter,
  */
 function ArrayEmitter(arr, op) {
   op = op || {};
-  this.readable = !op.norun;
-  this.ended    = false;
+  this.readable = true;
+  this.paused   = !!op.pause;
 
   this.arr = arr || [];
   this.len = (arr instanceof Array) 
@@ -40,7 +40,7 @@ function ArrayEmitter(arr, op) {
   this.i   = 0;
   this.op  = op;
 
-  if (this.readable) nextTick(emit.bind(this));
+  if (!this.paused) nextTick(emit.bind(this));
 
 }
 
@@ -66,6 +66,7 @@ function emit() {
       }
       else {
         self.emit('end');
+        self.readable = false;
       }
     }
   })();
@@ -74,16 +75,18 @@ function emit() {
 ArrayEmitter.prototype = new EventEmitter();
 
 ArrayEmitter.prototype.resume = function() {
-  if (this.ended || this.readable) return;
-  this.readable = true;
+  this.paused = false;
   emit.call(this);
 };
 
+ArrayEmitter.prototype.pause = function() {
+  this.paused = true;
+};
 
 ArrayEmitter.prototype.getKey = function() {
   return (this.arr instanceof Array) ? this.i : Object.keys(this.arr)[this.i];
-}
+};
 
-ArrayEmitter.version = '0.0.2';
+ArrayEmitter.version = '0.0.3';
 
 module.exports = ArrayEmitter;

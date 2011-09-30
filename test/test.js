@@ -102,7 +102,7 @@ eobjem2.on('end', function() {
 
 
 /* resume test */
-var ae = new ArrayEmitter(arr, {norun: true});
+var ae = new ArrayEmitter(arr, {pause: true});
 var c = c2 = 0;
 
 ae.on('elem', function(key, value) {

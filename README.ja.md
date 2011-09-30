@@ -1,4 +1,4 @@
-ArrayEmitter.js 0.0.2
+ArrayEmitter.js 0.0.3
 ==========
 [Node.js] 配列,オブジェクトの順次処理のためのEventEmitter
 
