@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/shinout/ArrayEmitter.png)](http://travis-ci.org/shinout/ArrayEmitter)
 ArrayEmitter.js 0.0.3
 ==========
 [Node.js] EventEmitter emitting array-iteration events
